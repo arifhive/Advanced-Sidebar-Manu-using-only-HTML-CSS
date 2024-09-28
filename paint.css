@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.sidebar {
+  position: fixed;
+  width: 240px;
+  height: 100%;
+  background: #222;
+  left: -240px;
+  transition: 0.5s;
+}
+
+.sidebar header {
+  font-size: 28px;
+  color: #fff;
+  line-height: 70px;
+  text-align: center;
+  background: #1b1b1b;
+}
+
+.sidebar a {
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: #fff;
+  line-height: 65px;
+  padding-left: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 5px solid transparent;
+  transition: 0.5s;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  border-left: 5px solid #b93632;
+  color: #b93632;
+}
+
+.sidebar a i {
+  font-size: 23px;
+  margin-right: 16px;
+}
+
+.sidebar a span {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#check {
+  display: none;
+}
+
+label .menu-btn,
+label .close-btn {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  background: #222;
+  border-radius: 5px;
+  margin: 15px 30px;
+  font-size: 29px;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+label .close-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#check:checked ~ .sidebar {
+  left: 0;
+}
+
+#check:checked ~ label .menu-btn {
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#check:checked ~ label .close-btn {
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 860px) {
+  .sidebar .header,
+  label .menu-btn,
+  label .close-btn {
+    display: none;
+  }
+
+  .sidebar {
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin: 70px 0;
+    border-radius: 0 5px 5px 0;
+  }
+
+  .sidebar a {
+    height: 60px;
+  }
+
+  a:hover {
+    width: 200px;
+    background: inherit;
+    border-radius: 0 5px 5px 0;
+  }
+
+  .sidebar a i {
+    margin-left: -10px;
+  }
+
+  span {
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .sidebar a:hover span {
+    opacity: 1;
+    visibility: visible;
+  }
+}
